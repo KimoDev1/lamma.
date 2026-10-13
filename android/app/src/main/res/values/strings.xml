@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">لمّة</string>
+    <string name="title_activity_main">لمّة</string>
+    <string name="package_name">com.lamma.focus</string>
+    <string name="custom_url_scheme">com.lamma.focus</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+  "appId": "com.lamma.focus",
+  "appName": "لمّة",
+  "webDir": "www",
+  "android": { "backgroundColor": "#fffaf2" }
+}

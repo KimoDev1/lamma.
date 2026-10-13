@@ -1,0 +1,503 @@
+@font-face {
+  font-family: "Cairo";
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/cairo-arabic-400-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: "Cairo";
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/cairo-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Cairo";
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/cairo-arabic-600-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: "Cairo";
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/cairo-latin-600-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Cairo";
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/cairo-arabic-700-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: "Cairo";
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/cairo-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Cairo";
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/cairo-arabic-800-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: "Cairo";
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/cairo-latin-800-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --brown: #3a291b;
+  --brown-dark: #251a11;
+  --orange: #e88a1a;
+  --cream: #fffaf2;
+  --white: #ffffff;
+  --line: #eadfd0;
+  --muted: #81776d;
+  --danger: #a94a3d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Cairo", sans-serif;
+  background: var(--cream);
+  color: var(--brown);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+/* ================= SCREENS ================= */
+
+.screen {
+  display: none;
+  min-height: 100vh;
+  padding: 30px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* ================= LOGIN ================= */
+
+.login-layout {
+  width: min(980px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  direction: ltr;
+}
+
+.login-brand {
+  direction: rtl;
+  text-align: center;
+}
+
+.main-logo {
+  display: block;
+  width: min(330px, 85%);
+  max-height: 230px;
+  object-fit: contain;
+  margin: 0 auto 18px;
+}
+
+.login-brand p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.card {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 18px 60px rgba(58, 41, 27, 0.08);
+}
+
+.login-card {
+  direction: rtl;
+}
+
+.login-card h1 {
+  font-size: 38px;
+  margin: 0 0 4px;
+}
+
+.eyebrow {
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ================= INPUT ================= */
+
+input {
+  width: 100%;
+  padding: 16px 18px;
+  margin: 20px 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  outline: none;
+  color: var(--brown);
+  background: #fffdf9;
+}
+
+input:focus {
+  border-color: var(--orange);
+}
+
+/* ================= BUTTONS ================= */
+
+.primary,
+.secondary,
+.ghost,
+.danger {
+  border-radius: 15px;
+  padding: 14px 22px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.primary {
+  background: var(--brown);
+  color: white;
+  width: 100%;
+}
+
+.primary:hover {
+  background: var(--brown-dark);
+  transform: translateY(-1px);
+}
+
+.secondary {
+  background: var(--orange);
+  color: white;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--muted);
+}
+
+.danger {
+  background: #f8e9e5;
+  color: var(--danger);
+}
+
+/* ================= TOP BAR ================= */
+
+.topbar {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  right: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--muted);
+  direction: rtl;
+}
+
+.small-logo {
+  width: 90px;
+  height: 45px;
+  object-fit: contain;
+}
+
+/* ================= FOCUS ================= */
+
+.focus-layout {
+  width: min(760px, 100%);
+  text-align: center;
+}
+
+.focus-layout h2 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 46px);
+}
+
+.puzzle {
+  width: 210px;
+  height: 210px;
+  margin: 35px auto 18px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+
+  position: relative;
+}
+
+.piece {
+  background: #efe7dd;
+  border-radius: 30px;
+  transition: 0.45s ease;
+  opacity: 0.55;
+}
+
+.piece.active {
+  opacity: 1;
+  background: var(--orange);
+}
+
+.piece-1.active,
+.piece-4.active {
+  background: var(--brown);
+}
+
+.puzzle-center {
+  position: absolute;
+
+  width: 48px;
+  height: 48px;
+
+  background: var(--white);
+  border-radius: 50%;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  box-shadow: 0 0 0 5px var(--cream);
+}
+
+/* ================= TIMER ================= */
+
+.timer {
+  font-size: clamp(76px, 13vw, 125px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -5px;
+}
+
+.timer-label {
+  color: var(--muted);
+  margin: 10px 0 22px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ================= DECISION ================= */
+
+.decision-card,
+.break-card,
+.reward-card {
+  max-width: 600px;
+  text-align: center;
+}
+
+.completed-icon,
+.break-icon {
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: #f8ead8;
+  color: var(--orange);
+
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.decision-card h2,
+.break-card h2,
+.reward-card h2 {
+  font-size: 38px;
+  margin: 0 0 8px;
+}
+
+.decision-buttons {
+  display: grid;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+/* ================= BREAK ================= */
+
+.break-timer {
+  font-size: 82px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -4px;
+  margin: 25px 0;
+}
+
+/* ================= REWARD ================= */
+
+/*
+  مساحة صورة المكافأة
+  تم ضبطها لتناسب صورك وتظهر الصورة كاملة.
+*/
+
+.reward-card {
+  width: min(680px, 100%);
+}
+
+.reward-frame {
+  width: 100%;
+
+  /*
+    نسبة أفقية مناسبة للموقع
+  */
+  aspect-ratio: 16 / 9;
+
+  margin: 25px 0 15px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background: #f4ede4;
+
+  border: 1px solid var(--line);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reward-frame img {
+  width: 100%;
+  height: 100%;
+
+  /*
+    أهم حاجة:
+    الصورة تظهر كاملة بدون قص
+  */
+  object-fit: contain;
+
+  object-position: center;
+
+  display: block;
+}
+
+/* زر المكافأة */
+
+.reward-card .primary {
+  margin-top: 5px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+  .screen {
+    padding: 20px 16px;
+  }
+
+  .login-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    direction: rtl;
+  }
+
+  .main-logo {
+    width: 220px;
+    max-height: 150px;
+  }
+
+  .card {
+    padding: 25px 20px;
+  }
+
+  .topbar {
+    left: 18px;
+    right: 18px;
+  }
+
+  .puzzle {
+    width: 170px;
+    height: 170px;
+  }
+
+  /*
+    على الموبايل نخلي الصورة أطول شوية
+    عشان الصور الطولية تبان بشكل أفضل
+  */
+
+  .reward-frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .reward-card h2 {
+    font-size: 32px;
+  }
+
+  .timer {
+    font-size: 80px;
+  }
+}
+
+/* ================= ANDROID APP ================= */
+
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+input {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.topbar {
+  top: calc(25px + env(safe-area-inset-top));
+}
+
+/* اللوجو خلفيته بيضا، فبنخليها تندمج مع لون الصفحة */
+.main-logo,
+.small-logo {
+  mix-blend-mode: multiply;
+}

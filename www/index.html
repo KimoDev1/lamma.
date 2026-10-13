@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#fffaf2">
+
+  <title>لمّة | ركّز. كمّل. لمّ نفسك.</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app">
+
+  <!-- ================= LOGIN ================= -->
+
+  <section id="loginScreen" class="screen active">
+
+    <div class="login-layout">
+
+      <div class="login-brand">
+
+        <img
+          src="images/logo.png"
+          alt="لمّة"
+          class="main-logo"
+        >
+
+        <p>
+          ركّز شوية، ولمّ نفسك.
+        </p>
+
+      </div>
+
+
+      <div class="card login-card">
+
+        <p class="eyebrow">
+          LAMMA
+        </p>
+
+        <h1>
+          جاهز تبدأ؟
+        </h1>
+
+        <p class="muted">
+          اكتب اسمك ونبدأ أول جلسة تركيز.
+        </p>
+
+        <input
+          id="nameInput"
+          type="text"
+          maxlength="30"
+          placeholder="اسمك"
+        >
+
+        <button
+          id="startBtn"
+          class="primary"
+        >
+          ابدأ اللمّة
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOCUS ================= -->
+
+  <section id="focusScreen" class="screen">
+
+    <header class="topbar">
+
+      <img
+        src="images/logo.png"
+        alt="لمّة"
+        class="small-logo"
+      >
+
+      <span id="userGreeting"></span>
+
+    </header>
+
+
+    <div class="focus-layout">
+
+      <p class="eyebrow">
+        الجلسة
+        <span id="sessionNumber">1</span>
+        من 4
+      </p>
+
+      <h2>
+        ركّز في اللي قدامك.
+      </h2>
+
+      <p class="muted">
+        الوقت ده ليك. اقفل أي مشتتات وابدأ.
+      </p>
+
+
+      <!-- Puzzle -->
+
+      <div
+        class="puzzle"
+        id="puzzle"
+      >
+
+        <div class="piece piece-1"></div>
+        <div class="piece piece-2"></div>
+        <div class="piece piece-3"></div>
+        <div class="piece piece-4"></div>
+
+        <div class="puzzle-center"></div>
+
+      </div>
+
+
+      <!-- Timer -->
+
+      <div
+        class="timer"
+        id="timer"
+      >
+        00:05
+      </div>
+
+      <div class="timer-label">
+        وقت التركيز
+      </div>
+
+
+      <div class="actions">
+
+        <button
+          id="pauseBtn"
+          class="secondary"
+        >
+          إيقاف مؤقت
+        </button>
+
+        <button
+          id="resetBtn"
+          class="ghost"
+        >
+          إعادة
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= DECISION ================= -->
+
+  <section id="decisionScreen" class="screen">
+
+    <div class="card decision-card">
+
+      <div class="completed-icon">
+        ✓
+      </div>
+
+      <p class="eyebrow">
+        قطعة جديدة اتلمّت
+      </p>
+
+      <h2 id="decisionTitle">
+        كمّل؟
+      </h2>
+
+      <p
+        id="decisionText"
+        class="muted"
+      >
+        أنت خلصت جلسة كاملة.
+      </p>
+
+
+      <div class="decision-buttons">
+
+        <button
+          id="continueBtn"
+          class="primary"
+        >
+          أكمّل ←
+        </button>
+
+        <button
+          id="giveUpBtn"
+          class="danger"
+        >
+          أستسلم
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= BREAK ================= -->
+
+  <section id="breakScreen" class="screen">
+
+    <div class="card break-card">
+
+      <div class="break-icon">
+        ☕
+      </div>
+
+      <p class="eyebrow">
+        وقت الراحة
+      </p>
+
+      <h2>
+        خد نفس.
+      </h2>
+
+      <p class="muted">
+        خلصت جلسة كاملة. خد بريك قبل ما تكمل.
+      </p>
+
+
+      <div
+        id="breakTimer"
+        class="break-timer"
+      >
+        00:05
+      </div>
+
+
+      <button
+        id="skipBreakBtn"
+        class="secondary"
+      >
+        تخطّي الراحة
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= REWARD ================= -->
+
+  <section id="rewardScreen" class="screen">
+
+    <div class="card reward-card">
+
+      <p class="eyebrow">
+        🎉 اكتملت اللمّة
+      </p>
+
+      <h2>
+        أنت كمّلتها.
+      </h2>
+
+      <p class="muted">
+        4 جلسات من التركيز. دي مكافأتك.
+      </p>
+
+
+      <div class="reward-frame">
+
+        <img
+          id="rewardImage"
+          src=""
+          alt="مكافأتك"
+        >
+
+      </div>
+
+
+      <button
+        id="againBtn"
+        class="primary"
+      >
+        ابدأ لمّة جديدة
+      </button>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
